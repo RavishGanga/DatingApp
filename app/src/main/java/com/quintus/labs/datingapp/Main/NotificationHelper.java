@@ -63,7 +63,7 @@ public class NotificationHelper extends ContextWrapper {
 
     public NotificationCompat.Builder getChannel1Notification(String title, String message) {
         Intent intent = new Intent(this, Matched_Activity.class);
-        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pi = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         Log.d("notification", "we are in getChaneel1Notification function \n ");
 
         return new NotificationCompat.Builder(getApplicationContext(), channel1ID)

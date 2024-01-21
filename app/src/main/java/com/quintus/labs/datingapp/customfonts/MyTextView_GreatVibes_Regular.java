@@ -14,7 +14,7 @@ import android.widget.TextView;
  */
 
 
-public class MyTextView_GreatVibes_Regular extends TextView {
+public class MyTextView_GreatVibes_Regular extends androidx.appcompat.widget.AppCompatTextView {
 
     public MyTextView_GreatVibes_Regular(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

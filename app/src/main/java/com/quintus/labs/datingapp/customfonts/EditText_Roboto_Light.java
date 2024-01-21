@@ -13,7 +13,7 @@ import android.widget.EditText;
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
 
-public class EditText_Roboto_Light extends EditText {
+public class EditText_Roboto_Light extends androidx.appcompat.widget.AppCompatEditText {
 
     public EditText_Roboto_Light(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

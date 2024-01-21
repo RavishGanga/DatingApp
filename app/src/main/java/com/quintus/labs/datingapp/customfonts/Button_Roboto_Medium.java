@@ -12,7 +12,7 @@ import android.widget.Button;
  * Created on 25-sept-2018.
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
-public class Button_Roboto_Medium extends Button {
+public class Button_Roboto_Medium extends androidx.appcompat.widget.AppCompatButton {
 
     public Button_Roboto_Medium(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

@@ -6,17 +6,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
-import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.content.ContextCompat;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
@@ -28,23 +28,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-/**
- * DatingApp
- * https://github.com/quintuslabs/DatingApp
- * Created on 25-sept-2018.
- * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
- */
 
 public class MainActivity extends Activity {
     private static final String TAG = "MainActivity";
     private static final int ACTIVITY_NUM = 1;
     final private int MY_PERMISSIONS_REQUEST_LOCATION = 123;
-    ListView listView;
     List<Cards> rowItems;
     FrameLayout cardFrame, moreFrame;
-    private Context mContext = MainActivity.this;
+    private final Context mContext = MainActivity.this;
     private NotificationHelper mNotificationHelper;
-    private Cards cards_data[];
+    private Cards[] cards_data;
     private PhotoAdapter arrayAdapter;
 
     @Override
@@ -109,24 +102,20 @@ public class MainActivity extends Activity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_LOCATION: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == MY_PERMISSIONS_REQUEST_LOCATION) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                            == PackageManager.PERMISSION_GRANTED) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED) {
 
-                        updateLocation();
-                    } else {
-                        Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT)
-                                .show();
-                    }
+                    updateLocation();
+                } else {
+                    Toast.makeText(MainActivity.this, "Location Permission Denied. You have to give permission inorder to know the user range ", Toast.LENGTH_SHORT)
+                            .show();
                 }
             }
-
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 
     private void updateSwipeCard() {

@@ -14,7 +14,7 @@ import android.widget.EditText;
  */
 
 
-public class EditText_Roboto_Meidum extends EditText {
+public class EditText_Roboto_Meidum extends androidx.appcompat.widget.AppCompatEditText {
 
     public EditText_Roboto_Meidum(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

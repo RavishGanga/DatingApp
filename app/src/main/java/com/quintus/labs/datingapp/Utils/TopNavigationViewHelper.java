@@ -1,5 +1,7 @@
 package com.quintus.labs.datingapp.Utils;
 
+import static android.os.Build.VERSION_CODES.R;
+
 import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
@@ -34,26 +36,19 @@ public class TopNavigationViewHelper {
         view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.ic_profile:
-                        Intent intent2 = new Intent(context, Profile_Activity.class);
-                        context.startActivity(intent2);
-                        break;
-
-                    case R.id.ic_main:
-                        Intent intent1 = new Intent(context, MainActivity.class);
-                        context.startActivity(intent1);
-                        break;
-
-                    case R.id.ic_matched:
-                        Intent intent3 = new Intent(context, Matched_Activity.class);
-                        context.startActivity(intent3);
-
-                        break;
+                if (com.quintus.labs.datingapp.R.id.ic_profile == item.getItemId()) {
+                    Intent intent2 = new Intent(context, Profile_Activity.class);
+                    context.startActivity(intent2);
+                } else if (item.getItemId() == com.quintus.labs.datingapp.R.id.ic_main) {
+                    Intent intent1 = new Intent(context, MainActivity.class);
+                    context.startActivity(intent1);
+                } else if (item.getItemId() == com.quintus.labs.datingapp.R.id.ic_matched) {
+                    Intent intent3 = new Intent(context, Matched_Activity.class);
+                    context.startActivity(intent3);
                 }
-
                 return false;
             }
+
         });
     }
 }

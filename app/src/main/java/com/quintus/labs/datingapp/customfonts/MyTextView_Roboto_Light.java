@@ -13,7 +13,7 @@ import android.widget.TextView;
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
 
-public class MyTextView_Roboto_Light extends TextView {
+public class MyTextView_Roboto_Light extends androidx.appcompat.widget.AppCompatTextView {
 
     public MyTextView_Roboto_Light(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);

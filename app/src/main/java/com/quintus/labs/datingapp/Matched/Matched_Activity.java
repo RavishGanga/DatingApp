@@ -56,7 +56,7 @@ public class Matched_Activity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.matche_recycler_view);
 
         adapter = new ActiveUserAdapter(usersList, getApplicationContext());
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, LinearLayout.HORIZONTAL, false);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);

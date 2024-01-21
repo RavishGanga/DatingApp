@@ -13,7 +13,7 @@ import android.widget.TextView;
  * Created by : Santosh Kumar Dash:- http://santoshdash.epizy.com
  */
 
-public class MyTextView_Parisienne_Regular extends TextView {
+public class MyTextView_Parisienne_Regular extends androidx.appcompat.widget.AppCompatTextView {
 
     public MyTextView_Parisienne_Regular(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
